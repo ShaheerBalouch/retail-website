@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<h1 class="titles">{{ current_user.username }}'s Shopping Cart</h1>
+	{% if cartItems|list %}
+
+		<table class='CartTable'>
+			<tr>
+				<th colspan='2' class="details">Details</th>
+				<th>Quantity</th>
+				<th>Price</th>
+				<th>Total Price</th>
+			</tr>
+
+			{% set totalPrice = namespace(value=0) %}
+		{% for product in cartItems %}
+			{% set price = product.items.price*product.quantity %}
+		
+			<tr>
+				<td class='DetailsImage'><a href="{{ url_for('item', item_id=product.items.id) }}"><img class="CartImages" src="{{ url_for('static', filename='img/' + product.items.image) }}"></a></td>
+
+				<td class='DetailsName'><a href="{{ url_for('item', item_id=product.items.id) }}">{{ product.items.name }}</a></td>
+
+				<td>{{ product.quantity }}<a href="{{ url_for('one_item', item_id=product.items.id) }}"><img id="smallerx" src="{{ url_for('static', filename='img/x.png') }}"></a></td>
+
+				<td class="prices"><a href="{{ url_for('item', item_id=product.items.id) }}">{{ "$%.2f"|format(product.items.price) }}</a></td>
+
+				<td class="prices">{{ "$%.2f"|format(price) }}</td>
+
+				<td><a href="{{ url_for('remove_item', item_id=product.items.id) }}"><img id="x" src="{{ url_for('static', filename='img/x.png') }}"></a></td>
+
+			</tr>
+
+
+			{% set totalPrice.value = totalPrice.value+price %}
+		
+
+		{% endfor %}
+		</table>
+		<table class="finalTable">
+			<tr>
+				<th colspan='4' id='totalPrice'>Grand Total</th>
+			</tr>
+
+			<tr>
+				<td colspan='4' id="FinalPrice" class="prices">{{ "$%.2f"|format(totalPrice.value) }}</td>
+			</tr>
+		</table>
+
+		
+
+		<a href="{{ url_for('checkout') }}"><button class="CheckoutButton" type="button">Proceed To Checkout</button></a>
+	{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<link href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Roboto&display=swap" rel="stylesheet">
+			<link rel=stylesheet type=text/css href="{{ url_for('static',filename='style2.css') }}">
+			<title>My Wonderful Site</title>
+		</head>
+
+		<body>
+
+			<div class = "Header">
+				<div class="logo"><a href="{{ url_for('about') }}"><img class="homeLogo" src="{{ url_for('static', filename='img/souq.png') }}"></a></div>
+				<div class = "InsideHeader">
+					<ul class="Navigate">
+
+
+					<a href="{{ url_for('home', sorter='id') }}"><li>Home</li></a>
+					<a href="{{ url_for('about') }}"><li>About Us</li></a>
+
+					{% if current_user.is_authenticated %}
+						<div class="loginMessage">Logged in as: {{ current_user.username }}</div>
+						<a href="{{ url_for('cart') }}"><li>Cart</li></a>
+						<a href="{{ url_for('wishlist') }}"><li>Wishlist</li></a>
+						<a href="{{ url_for('logout') }}"><li>Logout</li></a>
+
+					{% else %}
+
+						<div class="loginMessage">Not logged in (Guest)</div>
+						<a href="{{ url_for('register') }}"><li>Register</li></a>
+						<a href="{{ url_for('login') }}"><li>Login</li></a>
+
+
+					{% endif %}
+					
+
+					</ul>
+				</div>
+			</div>
+
+			<div id="content">
+				{% block content %}
+				{% endblock %}
+			</div>
+		</body>
+	</html>

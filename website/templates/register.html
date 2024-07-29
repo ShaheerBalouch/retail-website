@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	
+<form method="POST" action="">
+
+	{{ form.csrf_token }}
+	{{ form.username.label }} <br>{{ form.username }}	&nbsp	{% for error in form.username.errors %}<span style="color: red;">[{{ error }}]</span><br>
+	{% endfor %}
+
+	<br>{{ form.first_name.label }}<br> {{ form.first_name }}	&nbsp	{% for error in form.first_name.errors %}<span style="color: red;">[{{ error }}]</span><br>
+	{% endfor %}
+
+	<br> {{ form.last_name.label }}<br> {{ form.last_name }}	&nbsp	{% for error in form.last_name.errors %}<span style="color: red;">[{{ error }}]</span><br>
+	{% endfor %}
+
+	<br>{{ form.email.label }}<br> {{ form.email }}		&nbsp	{% for error in form.email.errors %}<span style="color: red;">[{{ error }}]</span><br>
+	{% endfor %}
+
+  	<br>{{ form.password.label }}<br> {{ form.password }}	&nbsp	{% for error in form.password.errors %}<span style="color: red;">[{{ error }}]</span><br>
+  	{% endfor %}
+
+  	<br>{{ form.confirm_password.label }}<br> {{ form.confirm_password }}	&nbsp	{% for error in form.confirm_password.errors %}<span style="color: red;">[{{ error }}]</span><br>
+  	{% endfor %}
+	<br><br><input type="submit" value="Register">
+
+</form>
+
+{% endblock content %}

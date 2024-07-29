@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	
+<form method="POST" action="">
+
+	{{ form.csrf_token }}
+	{{ form.first_name.label }} <br> {{ form.first_name }}	&nbsp	{% for error in form.first_name.errors %}<span style="color: red;">[{{ error }}]</span><br>
+	{% endfor %}
+	<br>{{ form.last_name.label }} <br> {{ form.last_name }}	&nbsp	{% for error in form.last_name.errors %}<span style="color: red;">[{{ error }}]</span><br>
+	{% endfor %}
+
+	<br>{{ form.card_number.label }} <br> {{ form.card_number }}	&nbsp	{% for error in form.card_number.errors %}<span style="color: red;">[{{ error }}]</span><br>
+	{% endfor %}
+
+  	<br>{{ form.security_number.label }} <br> {{ form.security_number }}	&nbsp	{% for error in form.security_number.errors %}<span style="color: red;">[{{ error }}]</span><br>
+  	{% endfor %}
+
+  	<br>{{ form.expiration_year.label }} <br> {{ form.expiration_year }}	&nbsp	{% for error in form.expiration_year.errors %}<span style="color: red;">[{{ error }}]</span><br>
+  	{% endfor %}
+
+  	<br>{{ form.expiration_month.label }} <br> {{ form.expiration_month }}	&nbsp	{% for error in form.expiration_month.errors %}<span style="color: red;">[{{ error }}]</span><br>
+  	{% endfor %}
+
+  	<br>{{ form.billing_adress.label }} <br> {{ form.billing_adress }}	&nbsp	{% for error in form.billing_adress.errors %}<span style="color: red;">[{{ error }}]</span><br>
+	{% endfor %}
+  	<br>{{ form.delivery_adress.label }} <br> {{ form.delivery_adress }}	&nbsp	{% for error in form.delivery_adress.errors %}<span style="color: red;">[{{ error }}]</span><br>
+	{% endfor %}
+	<br><input type="submit" value="Confirm Payment">
+
+</form>
+
+{% endblock content %}

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<h1 class="titles">{{ current_user.username }}'s Wishlist</h1>
+	{% if wishItems|list %}
+
+		<table class='CartTable'>
+			<tr>
+				<th colspan='2' class="details">Details</th>
+				<th>Quantity</th>
+				<th>Price</th>
+				<th>Total Price</th>
+			</tr>
+
+		{% for product in wishItems %}
+			{% set price = product.items.price*product.quantity %}
+		
+			<tr>
+				<td class='DetailsImage'><a href="{{ url_for('item', item_id=product.items.id) }}"><img class="CartImages" src="{{ url_for('static', filename='img/' + product.items.image) }}"></a></td>
+
+				<td class='DetailsName'><a href="{{ url_for('item', item_id=product.items.id) }}">{{ product.items.name }}</a></td>
+
+				<td>{{ product.quantity }}<a href="{{ url_for('one_wish', item_id=product.items.id) }}"><img id="smallerx" src="{{ url_for('static', filename='img/x.png') }}"></a></td>
+
+				<td class="prices"><a href="{{ url_for('item', item_id=product.items.id) }}">{{ "$%.2f"|format(product.items.price) }}</a></td>
+
+				<td class="prices">{{ "$%.2f"|format(price) }}</td>
+
+				<td><a href="{{ url_for('remove_wish', item_id=product.items.id) }}"><img id="x" src="{{ url_for('static', filename='img/x.png') }}"></a></td>
+
+				<td><a href="{{ url_for('add_item', item_id=product.items.id) }}"><button class='WishAdd' type="button">Add To Cart</button></a></td>
+
+			</tr>
+
+		
+
+		{% endfor %}
+
+		</table>
+	{% endif %}
+
+{% endblock content %}

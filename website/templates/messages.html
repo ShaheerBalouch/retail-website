@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+	{% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% set existing_messages = dict() %}
+          {% for message in messages %}
+            {% if message not in existing_messages %}
+              <p id="flashedMessages">{{ message }}</p>
+              {% set x = existing_messages.__setitem__(message, "value")  %}
+            {% endif %}
+          {% endfor %}
+      {% endif %}
+    {% endwith %}
+		
+	
+{% endblock content %}

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1 class="titles">Sort by</h1>
+
+<a href="{{ url_for('home', sorter='weight') }}"><button class="sorterButtons" id="SortMass" type="button">Weight (Lightest to Heaviest)</button></a>
+<a href="{{ url_for('home', sorter='price') }}"><button class="sorterButtons" id="SortPrice" type="button">Price (Lowest to Highest)</button></a>
+<a href="{{ url_for('home', sorter='name') }}"><button class="sorterButtons" id="SortAZ" type="button">Alphabetical Order (A-Z)</button></a>
+
+
+
+{% for item in items|sort(attribute=sorter) %}
+
+	<table class='HomeTables'>
+		<tr>
+			<th rowspan="3" ><a href="{{ url_for('item', item_id=item.id) }}"><img class="homepic" src="{{ url_for('static', filename='img/' + item.image) }}"></a></th>
+			<td class="homeName"><a href="{{ url_for('item', item_id=item.id) }}">{{ item.name }}</a></td>
+		</tr>
+
+		<tr>
+			<td class="homeprices"><a href="{{ url_for('item', item_id=item.id) }}">{{ "$%.2f"|format(item.price) }}</a></td>
+		</tr>
+
+		<tr>
+			<td class="homeDescription"><a href="{{ url_for('item', item_id=item.id) }}">{{ item.description }}</a></td>
+		</tr>
+		
+	</table>
+	<a href="{{ url_for('add_item', item_id=item.id) }}"><button class='CartButton' type="button">Add To Cart</button></a>
+	<a href="{{ url_for('add_wish', item_id=item.id) }}"><button class='WishButton' type="button">Add To Wishlist</button></a>
+
+{% endfor %}
+{% endblock content %}

@@ -1,0 +1,356 @@
+
+.homepic{
+	width:600px;
+	height:auto;
+	max-height: 500px;
+}
+
+
+
+#x{
+	width:30px;
+	height:30px;
+}
+
+#smallerx{
+	width:15px;
+	height:15px;
+	text-align: center;
+	padding-left: 1px;
+}
+
+.titles{
+	text-align: center;
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+
+
+.CartImages{
+	width:120px;
+	height:auto;
+	max-height:120px;
+}
+
+.CartTable{
+	padding-right: 6%;
+	padding-left: 8%;
+	padding-top: 4%;
+	/*border-collapse: collapse;*/
+
+}
+
+
+.finalTable{
+	position:relative;
+	width:87%;
+	left: 2%;
+	padding-left: 7%;
+}
+
+.CartBotRow{
+	bottom: 3%;
+}
+
+#PicAbout{
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+	width:30%;
+	height:30%;
+}
+
+#aboutPara{
+	text-align: center;
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-bottom: 5%;
+	margin-top: 5%;
+	font-size:24px;
+	color:#262626;
+	font-family: 'Roboto';
+}
+
+.homeLogo{
+	width:16%;
+	height:auto;
+	max-height: 8%;
+}
+
+#flashedMessages{
+	font-size: 40px;
+	color:#262626;
+	font-family: 'Montserrat';
+	text-align: center;
+}
+
+.logo{
+	position:absolute;
+	left:10%;
+	bottom:85%;
+	vertical-align: center;
+}
+
+
+#totalPrice{
+	border-bottom: 1px solid black;
+}
+
+.Details{
+	width:240px;
+}
+
+.CartTable th{
+	border-bottom: 1px solid black;
+
+}
+
+.CartTable td{
+	text-align: center;
+}
+
+.CartTable tr{
+
+}
+
+.DetailsImage{
+	padding-top:2%;
+	padding-bottom: 2%;
+
+}
+
+.DetailsName{
+	font-size: 18px;
+	width:20%;
+
+}
+
+.WishAdd{
+	color:black;
+	background-color: #cccc00;
+	padding:4px;
+	border-radius: 7px;
+}
+
+.DetailsDescription{
+	font-size:18px;
+	width:20%;
+}
+
+
+th{
+	/*border:1px solid black;*/
+}
+
+td{
+	/*padding-left: 20px;*/
+	/*border:1px solid black;*/
+}
+
+.CartButton{
+	background-color: #cccc00;
+	color:black;
+	padding:5px;
+	border-radius:7px;
+	width:84%;
+	position:relative;
+	left:8%;
+}
+
+.sorterButtons{
+	color:black;
+	padding:4px;
+	border-radius:7px;
+	position: relative;
+	left:28%;
+	font-size: 16px;
+
+}
+
+.CheckoutButton{
+	background-color: #cccc00;
+	color:black;
+	padding:5px;
+	border-radius:7px;
+	width:84%;
+	position:relative;
+	left:8%;
+	margin-bottom: 2%;
+}
+
+.homeprices{
+	font-family: 'Crimson Text';
+	font-size: 32px;
+	padding-left: 2%;
+	font
+}
+
+.WishButton{
+	background-color: #99bbff;
+	color:black;
+	padding:5px;
+	border-radius:7px;
+	width:84%;
+	position:relative;
+	left:8%;
+	margin-bottom: 2%;
+}
+
+
+.images{
+	width:600px;
+	height:auto;
+	padding-bottom: 4%;
+	padding-top:2%;
+
+}
+
+.ItemName{
+	padding-bottom: 2%;
+}
+
+.ItemTable{
+	text-align: center;
+	font-size: 24px;
+	font-family: 'Roboto';
+	margin-left: 17%;
+	margin-right: 17%;
+}
+
+.ItemDescription{
+	padding-bottom: 4%;
+}
+
+.FeatureList{
+
+}
+
+.homeName{
+	font-size: 30px;
+	padding-left: 2%;
+	padding-right: 5%;
+	text-decoration: none;
+	font-color:black;
+}
+
+#SortMass{
+	background-color: #ffad33;
+
+}
+
+#SortPrice{
+	background-color: #33cc33;
+	
+}
+
+#SortAZ{
+	background-color: #ff1a1a;
+	
+}
+
+
+
+.homeDescription{
+	font-size: 26px;
+	padding-left: 2%;
+	padding-right: 5%;
+}
+
+.loginMessage{
+	position: absolute;
+	left:5%;
+	top:5%;
+	color:white;
+	vertical-align: middle;
+	font-family: 'Montserrat';
+	font-size: 12px;
+	height:5%;
+}
+
+#FinalPrice{
+	text-align: center;
+}
+
+.prices{
+	font-size: 24px;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	font-family: 'Crimson Text';
+}
+
+.HomeTables{
+	padding-top: 150px;
+	padding-bottom: 10px;
+	padding-left: 8%;
+	/*border:1px solid black;*/
+}
+
+
+.items{
+	font-size:24px;
+	padding-bottom: 2px;
+}
+
+.descriptions{
+	padding-top: 2px;
+	font-size: 18px;
+}
+
+
+.Header{
+	width:100%;
+	height: 80px;
+	display: block;
+	background-color: #4b4276;
+}
+
+.InsideHeader{
+	width: 1000px;
+	height: 10%;
+	display: block;
+	margin:0 auto;
+}
+
+.Navigate{
+	position:absolute;
+	left:66%;
+	height: 10%;
+}
+
+
+
+.Navigate a{
+	height: 10%;
+	display: table;
+	float: left;
+	padding: 0px 20px;
+	padding-top: 8%;
+}
+
+.Navigate a li{
+	display: table-cell;
+	vertical-align: middle;
+	height: 10%;
+	color: white;
+	font-family: 'Montserrat';
+	font-size: 15px;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/*list-style: none;*/
+	text-decoration: none;
+}
+
+
+table{
+	font-family: 'Roboto';
+}
+
+
+body{
+	background: #A9A9A9;
+}
+

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+
+	<span style="color: red;">[{{ message }}] </span>
+{% endfor %}
+	
+<form method="POST" action="">
+
+	{{ form.csrf_token }}
+	<br>{{ form.email.label }}<br> {{ form.email }}	&nbsp	{% for error in form.email.errors %}<span style="color: red;">[{{ error }}]</span><br>
+	{% endfor %}
+  	<br>{{ form.password.label }}<br> {{ form.password }}	&nbsp	{% for error in form.password.errors %}<span style="color: red;">[{{ error }}]</span><br>
+  	{% endfor %}
+	<br><br><input type="submit" value="Login">
+
+</form>
+
+{% endblock content %}

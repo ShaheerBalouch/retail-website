@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block content %}
+		
+	<table class="ItemTable">
+		<tr>
+			<th colspan='2' ><img class = "images" src="{{ url_for('static', filename='img/' + items.image) }}"></th>
+		</tr>
+
+		<tr>
+			<td class="ItemName">{{ items.name }} is {{ "$%.2f"|format(items.price) }}</td>
+		</tr>
+
+		<tr>
+			<td class="ItemDescription">{{ items.description }}</td>
+		</tr>
+
+		<tr>
+			<td>
+				<ul class="FeatureList">
+
+					{% set weight=items.weight %}
+					{% set unit='kg' %}
+
+					{% if items.weight<1 %}
+
+					{% set weight=items.weight*100 %}
+					{% set unit='g' %}
+
+					{% endif %}
+
+					<li>{{ "%.2f"|format(weight) }}{{ unit }}</li>
+					<br>
+					<li>{{ items.feature1 }}</li>
+					<br>
+					<li>{{ items.feature2 }}</li>
+					<br>
+					
+
+				</ul>
+			</td>
+		</tr>
+	</table>
+	<a href="{{ url_for('add_item', item_id=items.id) }}"><button class='CartButton' type="button">Add To Cart</button></a>
+	<a href="{{ url_for('add_wish', item_id=items.id) }}"><button class='WishButton' type="button">Add To Wishlist</button>
+
+			
+
+{% endblock content %}
